@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LOHR-BENCH method rankings for TAMP, end-to-end policies including VLA and WAM, and hybrid agent-based methods.">
+  <meta name="theme-color" content="#faf9f6">
+  <title>Leaderboard · LOHR-BENCH</title>
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <script defer src="./static/js/leaderboard.js"></script>
+</head>
+<body class="results-page">
+  <a class="skip-link" href="#results">Skip to results</a>
+  <header class="results-navigation">
+    <div class="results-container navigation-inner">
+      <a class="wordmark" href="./index.html" aria-label="LOHR-BENCH home">LOHR<span>–</span>BENCH</a>
+      <nav aria-label="Main navigation">
+        <a href="./index.html">Overview</a>
+        <a href="./leaderboard.html" aria-current="page">Leaderboard</a>
+        <a href="./static/pdf/LoHR_Supplementary.pdf" target="_blank" rel="noopener" aria-label="Appendix PDF (opens in a new tab)">Appendix ↗</a>
+        <a href="./index.html#video-appendix">Video appendix</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="results" class="results-container">
+    <div class="results-heading">
+      <div><p class="section-index">Method rankings</p><h1>Leaderboard</h1><p class="results-intro">Compare methods within TAMP, end-to-end, and hybrid families.</p></div>
+      <a class="download-link" href="./static/data/method-rankings.csv" download="lohr-bench-method-rankings.csv">Download rankings <span>CSV</span><span aria-hidden="true">↓</span></a>
+    </div>
+
+    <div class="family-tabs" role="tablist" aria-label="Method family" hidden><button type="button" role="tab" id="tab-tamp" aria-controls="panel-tamp" aria-selected="true" tabindex="0" data-family-tab="tamp"><span class="family-tab-title">TAMP<span class="family-tab-count">2</span></span><span class="family-tab-description">Task and motion planning</span></button>
+<button type="button" role="tab" id="tab-e2e" aria-controls="panel-e2e" aria-selected="false" tabindex="-1" data-family-tab="e2e"><span class="family-tab-title">End-to-end<span class="family-tab-count">4</span></span><span class="family-tab-description">VLA, WAM & other policies</span></button>
+<button type="button" role="tab" id="tab-hybrid" aria-controls="panel-hybrid" aria-selected="false" tabindex="-1" data-family-tab="hybrid"><span class="family-tab-title">Hybrid<span class="family-tab-count">1</span></span><span class="family-tab-description">Agent-based methods</span></button></div>
+    <div class="ranking-settings">
+      <p><span class="protocol-dot" aria-hidden="true"></span><strong>All reported tasks</strong><span class="settings-divider">/</span><span class="ranking-order-label">Ranked by mean success rate</span></p>
+      <label class="ranking-sort" hidden>Rank by <select id="ranking-metric"><option value="sr">Success rate</option><option value="prog">Progress score</option></select></label>
+    </div>
+    <div class="ranking-status visually-hidden" role="status" aria-live="polite"></div>
+    <div class="family-panels">      <section class="family-panel" id="panel-tamp" aria-labelledby="heading-tamp" data-family="tamp">
+        <div class="family-panel-heading"><div><p>Planning methods</p><h2 id="heading-tamp">TAMP methods</h2></div><span class="method-count">2 methods</span></div>
+        
+        <div class="ranking-columns" aria-hidden="true"><span>Rank</span><span>Method</span><span>Mean SR ↑</span><span>Mean Prog ↑</span><span>Reported tasks</span><span></span></div>
+        <ol class="method-rankings" aria-label="TAMP method rankings">
+          <li class="method-entry" data-subtype="planning" data-sr="73.375" data-prog="0.773125" data-name="PDDLStream">
+            <details class="method-detail" id="method-pddlstream">
+              <summary class="method-summary">
+                <span class="method-rank" aria-label="Rank 1">01</span>
+                <span class="method-identity"><span class="method-name">PDDLStream</span><span class="method-type">Task and motion planning</span></span>
+                <span class="method-sr"><span class="mobile-metric">Mean SR</span><strong>73.38<small>%</small></strong><span class="score-track" aria-hidden="true"><span style="width: 73.3750%"></span></span></span>
+                <span class="method-prog"><span class="mobile-metric">Mean Prog</span><strong>0.773</strong></span>
+                <span class="method-coverage"><span class="mobile-metric">Reported</span>8<span> / 8</span></span>
+                <span class="expand-method" aria-hidden="true">+</span>
+              </summary>
+              <div class="method-breakdown">
+                <div class="breakdown-heading"><h3>PDDLStream · Per-task results</h3></div>
+                <p>The average includes all 8 reported tasks. Missing results are excluded.</p>
+                <div class="breakdown-scroll" role="region" aria-label="PDDLStream task results" tabindex="0"><table class="method-task-table"><caption class="visually-hidden">All eight task results for PDDLStream</caption><thead><tr><th scope="col">Suite</th><th scope="col">Task</th><th scope="col">SR ↑</th><th scope="col">Prog ↑</th></tr></thead><tbody><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-stack_cube_10">stack_cube_10</a></th><td>100%</td><td>1.000</td></tr><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-reverse_stack">reverse_stack</a></th><td>96%</td><td>0.960</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-stack_cube_active_exploration">stack_active</a></th><td>49%</td><td>0.615</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-pick_cube_active_exploration">pick_active</a></th><td>80%</td><td>0.897</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-fruit_placement">fruit_placement</a></th><td>100%</td><td>1.000</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-repackage">repackage</a></th><td>78%</td><td>0.860</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-stack_cube_clutter">stack_clutter</a></th><td>35%</td><td>0.350</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-cluttered_packing">clutter_packing</a></th><td>49%</td><td>0.503</td></tr></tbody></table></div>
+              </div>
+            </details>
+          </li>
+          <li class="method-entry" data-subtype="planning" data-sr="45.33333333333333333333333333" data-prog="0.6578333333333333333333333333" data-name="TiPToP">
+            <details class="method-detail" id="method-tiptop">
+              <summary class="method-summary">
+                <span class="method-rank" aria-label="Rank 2">02</span>
+                <span class="method-identity"><span class="method-name">TiPToP</span><span class="method-type">Task and motion planning</span></span>
+                <span class="method-sr"><span class="mobile-metric">Mean SR</span><strong>45.33<small>%</small></strong><span class="score-track" aria-hidden="true"><span style="width: 45.3333%"></span></span></span>
+                <span class="method-prog"><span class="mobile-metric">Mean Prog</span><strong>0.658</strong></span>
+                <span class="method-coverage"><span class="mobile-metric">Reported</span>6<span> / 8</span></span>
+                <span class="expand-method" aria-hidden="true">+</span>
+              </summary>
+              <div class="method-breakdown">
+                <div class="breakdown-heading"><h3>TiPToP · Per-task results</h3></div>
+                <p>The average includes all 6 reported tasks. Missing results are excluded.</p>
+                <div class="breakdown-scroll" role="region" aria-label="TiPToP task results" tabindex="0"><table class="method-task-table"><caption class="visually-hidden">All eight task results for TiPToP</caption><thead><tr><th scope="col">Suite</th><th scope="col">Task</th><th scope="col">SR ↑</th><th scope="col">Prog ↑</th></tr></thead><tbody><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-stack_cube_10">stack_cube_10</a></th><td>81%</td><td>0.929</td></tr><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-reverse_stack">reverse_stack</a></th><td>12%</td><td>0.358</td></tr><tr class="outside-ranking"><td>Active expl.</td><th scope="row"><a href="./index.html#task-stack_cube_active_exploration">stack_active</a></th><td>—</td><td>—</td></tr><tr class="outside-ranking"><td>Active expl.</td><th scope="row"><a href="./index.html#task-pick_cube_active_exploration">pick_active</a></th><td>—</td><td>—</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-fruit_placement">fruit_placement</a></th><td>29%</td><td>0.734</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-repackage">repackage</a></th><td>67%</td><td>0.853</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-stack_cube_clutter">stack_clutter</a></th><td>38%</td><td>0.430</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-cluttered_packing">clutter_packing</a></th><td>45%</td><td>0.643</td></tr></tbody></table></div>
+              </div>
+            </details>
+          </li>
+        </ol>
+        
+        
+      </section>      <section class="family-panel" id="panel-e2e" aria-labelledby="heading-e2e" data-family="e2e">
+        <div class="family-panel-heading"><div><p>Policies using raw observations</p><h2 id="heading-e2e">End-to-end methods</h2></div><span class="method-count">4 methods</span></div>
+        <div class="subtype-filters" role="group" aria-label="End-to-end method type" hidden>
+          <button type="button" data-subtype-filter="all" aria-pressed="true">All E2E <span>4</span></button>
+          <button type="button" data-subtype-filter="vla" aria-pressed="false">VLA <span>2</span></button>
+          <button type="button" data-subtype-filter="wam" aria-pressed="false">WAM <span>0</span></button>
+          <button type="button" data-subtype-filter="other" aria-pressed="false">Other policies <span>2</span></button>
+        </div>
+        <div class="ranking-columns" aria-hidden="true"><span>Rank</span><span>Method</span><span>Mean SR ↑</span><span>Mean Prog ↑</span><span>Reported tasks</span><span></span></div>
+        <ol class="method-rankings" aria-label="End-to-end method rankings">
+          <li class="method-entry" data-subtype="other" data-sr="11.5" data-prog="0.26625" data-name="DP">
+            <details class="method-detail" id="method-dp">
+              <summary class="method-summary">
+                <span class="method-rank" aria-label="Rank 1">01</span>
+                <span class="method-identity"><span class="method-name">DP</span><span class="method-type">Imitation policy · Diffusion policy</span></span>
+                <span class="method-sr"><span class="mobile-metric">Mean SR</span><strong>11.50<small>%</small></strong><span class="score-track" aria-hidden="true"><span style="width: 11.5000%"></span></span></span>
+                <span class="method-prog"><span class="mobile-metric">Mean Prog</span><strong>0.266</strong></span>
+                <span class="method-coverage"><span class="mobile-metric">Reported</span>8<span> / 8</span></span>
+                <span class="expand-method" aria-hidden="true">+</span>
+              </summary>
+              <div class="method-breakdown">
+                <div class="breakdown-heading"><h3>DP · Per-task results</h3><a href="https://diffusion-policy.cs.columbia.edu/" target="_blank" rel="noopener">Method reference ↗</a></div>
+                <p>The average includes all 8 reported tasks. Missing results are excluded.</p>
+                <div class="breakdown-scroll" role="region" aria-label="DP task results" tabindex="0"><table class="method-task-table"><caption class="visually-hidden">All eight task results for DP</caption><thead><tr><th scope="col">Suite</th><th scope="col">Task</th><th scope="col">SR ↑</th><th scope="col">Prog ↑</th></tr></thead><tbody><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-stack_cube_10">stack_cube_10</a></th><td>51%</td><td>0.856</td></tr><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-reverse_stack">reverse_stack</a></th><td>0%</td><td>0.004</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-stack_cube_active_exploration">stack_active</a></th><td>16%</td><td>0.460</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-pick_cube_active_exploration">pick_active</a></th><td>2%</td><td>0.170</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-fruit_placement">fruit_placement</a></th><td>0%</td><td>0.020</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-repackage">repackage</a></th><td>15%</td><td>0.520</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-stack_cube_clutter">stack_clutter</a></th><td>0%</td><td>0.000</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-cluttered_packing">clutter_packing</a></th><td>8%</td><td>0.100</td></tr></tbody></table></div>
+              </div>
+            </details>
+          </li>
+          <li class="method-entry" data-subtype="vla" data-sr="7.375" data-prog="0.296875" data-name="OpenVLA-oft">
+            <details class="method-detail" id="method-openvla-oft">
+              <summary class="method-summary">
+                <span class="method-rank" aria-label="Rank 2">02</span>
+                <span class="method-identity"><span class="method-name">OpenVLA-oft</span><span class="method-type">Vision-language-action model</span></span>
+                <span class="method-sr"><span class="mobile-metric">Mean SR</span><strong>7.38<small>%</small></strong><span class="score-track" aria-hidden="true"><span style="width: 7.3750%"></span></span></span>
+                <span class="method-prog"><span class="mobile-metric">Mean Prog</span><strong>0.297</strong></span>
+                <span class="method-coverage"><span class="mobile-metric">Reported</span>8<span> / 8</span></span>
+                <span class="expand-method" aria-hidden="true">+</span>
+              </summary>
+              <div class="method-breakdown">
+                <div class="breakdown-heading"><h3>OpenVLA-oft · Per-task results</h3><a href="https://github.com/moojink/openvla-oft" target="_blank" rel="noopener">Method reference ↗</a></div>
+                <p>The average includes all 8 reported tasks. Missing results are excluded.</p>
+                <div class="breakdown-scroll" role="region" aria-label="OpenVLA-oft task results" tabindex="0"><table class="method-task-table"><caption class="visually-hidden">All eight task results for OpenVLA-oft</caption><thead><tr><th scope="col">Suite</th><th scope="col">Task</th><th scope="col">SR ↑</th><th scope="col">Prog ↑</th></tr></thead><tbody><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-stack_cube_10">stack_cube_10</a></th><td>0%</td><td>0.194</td></tr><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-reverse_stack">reverse_stack</a></th><td>36%</td><td>0.775</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-stack_cube_active_exploration">stack_active</a></th><td>0%</td><td>0.063</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-pick_cube_active_exploration">pick_active</a></th><td>0%</td><td>0.087</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-fruit_placement">fruit_placement</a></th><td>17%</td><td>0.736</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-repackage">repackage</a></th><td>6%</td><td>0.520</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-stack_cube_clutter">stack_clutter</a></th><td>0%</td><td>0.00</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-cluttered_packing">clutter_packing</a></th><td>0%</td><td>0.000</td></tr></tbody></table></div>
+              </div>
+            </details>
+          </li>
+          <li class="method-entry" data-subtype="vla" data-sr="7.25" data-prog="0.1825" data-name="π0 (FAST)">
+            <details class="method-detail" id="method-0-fast">
+              <summary class="method-summary">
+                <span class="method-rank" aria-label="Rank 3">03</span>
+                <span class="method-identity"><span class="method-name">π0 (FAST)</span><span class="method-type">Vision-language-action model</span></span>
+                <span class="method-sr"><span class="mobile-metric">Mean SR</span><strong>7.25<small>%</small></strong><span class="score-track" aria-hidden="true"><span style="width: 7.2500%"></span></span></span>
+                <span class="method-prog"><span class="mobile-metric">Mean Prog</span><strong>0.183</strong></span>
+                <span class="method-coverage"><span class="mobile-metric">Reported</span>8<span> / 8</span></span>
+                <span class="expand-method" aria-hidden="true">+</span>
+              </summary>
+              <div class="method-breakdown">
+                <div class="breakdown-heading"><h3>π0 (FAST) · Per-task results</h3><a href="https://www.pi.website/blog/openpi" target="_blank" rel="noopener">Method reference ↗</a></div>
+                <p>The average includes all 8 reported tasks. Missing results are excluded.</p>
+                <div class="breakdown-scroll" role="region" aria-label="π0 (FAST) task results" tabindex="0"><table class="method-task-table"><caption class="visually-hidden">All eight task results for π0 (FAST)</caption><thead><tr><th scope="col">Suite</th><th scope="col">Task</th><th scope="col">SR ↑</th><th scope="col">Prog ↑</th></tr></thead><tbody><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-stack_cube_10">stack_cube_10</a></th><td>0%</td><td>0.190</td></tr><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-reverse_stack">reverse_stack</a></th><td>0%</td><td>0.034</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-stack_cube_active_exploration">stack_active</a></th><td>0%</td><td>0.050</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-pick_cube_active_exploration">pick_active</a></th><td>0%</td><td>0.023</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-fruit_placement">fruit_placement</a></th><td>0%</td><td>0.118</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-repackage">repackage</a></th><td>41%</td><td>0.793</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-stack_cube_clutter">stack_clutter</a></th><td>2%</td><td>0.035</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-cluttered_packing">clutter_packing</a></th><td>15%</td><td>0.217</td></tr></tbody></table></div>
+              </div>
+            </details>
+          </li>
+          <li class="method-entry" data-subtype="other" data-sr="2.75" data-prog="0.153375" data-name="ACT">
+            <details class="method-detail" id="method-act">
+              <summary class="method-summary">
+                <span class="method-rank" aria-label="Rank 4">04</span>
+                <span class="method-identity"><span class="method-name">ACT</span><span class="method-type">Imitation policy · Action chunking</span></span>
+                <span class="method-sr"><span class="mobile-metric">Mean SR</span><strong>2.75<small>%</small></strong><span class="score-track" aria-hidden="true"><span style="width: 2.7500%"></span></span></span>
+                <span class="method-prog"><span class="mobile-metric">Mean Prog</span><strong>0.153</strong></span>
+                <span class="method-coverage"><span class="mobile-metric">Reported</span>8<span> / 8</span></span>
+                <span class="expand-method" aria-hidden="true">+</span>
+              </summary>
+              <div class="method-breakdown">
+                <div class="breakdown-heading"><h3>ACT · Per-task results</h3><a href="https://tonyzhaozh.github.io/aloha/" target="_blank" rel="noopener">Method reference ↗</a></div>
+                <p>The average includes all 8 reported tasks. Missing results are excluded.</p>
+                <div class="breakdown-scroll" role="region" aria-label="ACT task results" tabindex="0"><table class="method-task-table"><caption class="visually-hidden">All eight task results for ACT</caption><thead><tr><th scope="col">Suite</th><th scope="col">Task</th><th scope="col">SR ↑</th><th scope="col">Prog ↑</th></tr></thead><tbody><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-stack_cube_10">stack_cube_10</a></th><td>0%</td><td>0.192</td></tr><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-reverse_stack">reverse_stack</a></th><td>0%</td><td>0.002</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-stack_cube_active_exploration">stack_active</a></th><td>1%</td><td>0.463</td></tr><tr><td>Active expl.</td><th scope="row"><a href="./index.html#task-pick_cube_active_exploration">pick_active</a></th><td>0%</td><td>0.067</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-fruit_placement">fruit_placement</a></th><td>0%</td><td>0.010</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-repackage">repackage</a></th><td>21%</td><td>0.493</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-stack_cube_clutter">stack_clutter</a></th><td>0%</td><td>0.00</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-cluttered_packing">clutter_packing</a></th><td>0%</td><td>0.000</td></tr></tbody></table></div>
+              </div>
+            </details>
+          </li>
+        </ol>
+        <div class="empty-ranking" hidden><h3>No WAM results yet</h3><p>World-action models will appear here when evaluation results are available.</p></div>
+        
+      </section>      <section class="family-panel" id="panel-hybrid" aria-labelledby="heading-hybrid" data-family="hybrid">
+        <div class="family-panel-heading"><div><p>Planning and learned policies</p><h2 id="heading-hybrid">Hybrid methods</h2></div><span class="method-count">1 method</span></div>
+        
+        <div class="ranking-columns" aria-hidden="true"><span>Rank</span><span>Method</span><span>Mean SR ↑</span><span>Mean Prog ↑</span><span>Reported tasks</span><span></span></div>
+        <ol class="method-rankings" aria-label="Hybrid method rankings">
+          <li class="method-entry" data-subtype="agent" data-sr="71" data-prog="0.8143333333333333333333333333" data-name="Agentic">
+            <details class="method-detail" id="method-agentic">
+              <summary class="method-summary">
+                <span class="method-rank" aria-label="Rank 1">01</span>
+                <span class="method-identity"><span class="method-name">Agentic</span><span class="method-type">Agent-based hybrid</span></span>
+                <span class="method-sr"><span class="mobile-metric">Mean SR</span><strong>71.00<small>%</small></strong><span class="score-track" aria-hidden="true"><span style="width: 71.0000%"></span></span></span>
+                <span class="method-prog"><span class="mobile-metric">Mean Prog</span><strong>0.814</strong></span>
+                <span class="method-coverage"><span class="mobile-metric">Reported</span>6<span> / 8</span></span>
+                <span class="expand-method" aria-hidden="true">+</span>
+              </summary>
+              <div class="method-breakdown">
+                <div class="breakdown-heading"><h3>Agentic · Per-task results</h3></div>
+                <p>The average includes all 6 reported tasks. Missing results are excluded.</p>
+                <div class="breakdown-scroll" role="region" aria-label="Agentic task results" tabindex="0"><table class="method-task-table"><caption class="visually-hidden">All eight task results for Agentic</caption><thead><tr><th scope="col">Suite</th><th scope="col">Task</th><th scope="col">SR ↑</th><th scope="col">Prog ↑</th></tr></thead><tbody><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-stack_cube_10">stack_cube_10</a></th><td>85%</td><td>0.934</td></tr><tr><td>Extended-Long</td><th scope="row"><a href="./index.html#task-reverse_stack">reverse_stack</a></th><td>53%</td><td>0.674</td></tr><tr class="outside-ranking"><td>Active expl.</td><th scope="row"><a href="./index.html#task-stack_cube_active_exploration">stack_active</a></th><td>—</td><td>—</td></tr><tr class="outside-ranking"><td>Active expl.</td><th scope="row"><a href="./index.html#task-pick_cube_active_exploration">pick_active</a></th><td>—</td><td>—</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-fruit_placement">fruit_placement</a></th><td>66%</td><td>0.866</td></tr><tr><td>Tool use</td><th scope="row"><a href="./index.html#task-repackage">repackage</a></th><td>86%</td><td>0.920</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-stack_cube_clutter">stack_clutter</a></th><td>69%</td><td>0.735</td></tr><tr><td>Cluttered</td><th scope="row"><a href="./index.html#task-cluttered_packing">clutter_packing</a></th><td>67%</td><td>0.757</td></tr></tbody></table></div>
+              </div>
+            </details>
+          </li>
+        </ol>
+        
+        <p class="single-entry-note">One agent-based method has reported results so far.</p>
+      </section></div>
+    <p class="ranking-hint">Select a method to see its per-task results. Reported tasks shows coverage out of the eight tasks in Table II.</p>
+
+    <details class="ranking-protocol"><summary>How the rankings are calculated</summary><div><p>These rankings are computed from the per-task results in Table II. Each method is scored on all tasks for which it has reported results.</p><p>The score is the unweighted mean across the reported tasks. Methods are ranked within their family by mean success rate, with mean progress as the tie-breaker. Selecting progress reverses the priority. Rankings use unrounded values; displayed scores are rounded.</p><p>PDDLStream, ACT, DP, OpenVLA-oft, and π₀ (FAST) are averaged over eight tasks. TiPToP and Agentic are averaged over six, as their active exploration results are not reported. Methods therefore have different task coverage; the count is shown beside each score. Missing results are never treated as zero. VLA and other-policy filters show ranks within the selected subtype.</p></div></details>
+
+    <details class="raw-results"><summary><span>Full per-task results</span><span class="raw-results-meta">Table II · 8 tasks · 7 methods</span></summary><div class="raw-results-content"><a class="raw-download" href="./static/data/leaderboard.csv" download="lohr-bench-per-task-results.csv">Download per-task results (CSV) ↓</a>    <section class="results-section" aria-labelledby="table-heading">
+      <div class="table-heading">
+        <h2 id="table-heading"><span>Table II</span> Per-task results</h2>
+        <p><span>SR ↑</span> Success rate <span class="legend-separator">·</span> <span>Prog ↑</span> Progress score</p>
+      </div>
+      <div class="results-table-scroll" role="region" aria-label="Per-task results; scroll horizontally to compare all seven methods" tabindex="0">
+        <table class="results-table" aria-describedby="table-notes">
+          <caption class="visually-hidden">Table II: Per-task success rate (SR ↑) and progress score (Prog ↑), reported as SR/Prog.</caption>
+          <colgroup><col class="suite-column"><col class="task-column"></colgroup>
+          <colgroup span="2"></colgroup>
+          <colgroup span="4"></colgroup>
+          <colgroup span="1"></colgroup>
+          <thead>
+            <tr class="family-headers">
+              <th rowspan="2" scope="col" class="type-heading">Type</th>
+              <th rowspan="2" scope="col" class="task-cell">Task</th>
+              <th colspan="2" scope="colgroup" class="family-start">TAMP</th>
+              <th colspan="4" scope="colgroup" class="family-start">E2E <span>(raw obs.)</span></th>
+              <th scope="colgroup" class="family-start hybrid-cell">Hybrid</th>
+            </tr>
+            <tr class="method-headers">
+              <th scope="col" class="family-start">PDDLStream</th>
+              <th scope="col">TiPToP</th>
+              <th scope="col" class="family-start">ACT</th>
+              <th scope="col">DP</th>
+              <th scope="col">OpenVLA-oft</th>
+              <th scope="col">π<sub>0</sub> <span>(FAST)</span></th>
+              <th scope="col" class="family-start hybrid-cell">Agentic</th>
+            </tr>
+          </thead>
+      <tbody>
+        <tr>
+          <th scope="rowgroup" rowspan="2" class="suite-cell">Extended long-horizon</th>
+          <th scope="row" class="task-cell"><a href="./index.html#task-stack_cube_10" title="Watch the stack_cube_10 demonstration">stack_cube_10</a></th>
+          <td class="score family-start"><strong class="sr">100%</strong><span class="score-divider">/</span><strong class="prog">1.000</strong></td>
+          <td class="score"><span class="sr">81%</span><span class="score-divider">/</span><span class="prog">0.929</span></td>
+          <td class="score family-start"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.192</span></td>
+          <td class="score"><span class="sr">51%</span><span class="score-divider">/</span><span class="prog">0.856</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.194</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.190</span></td>
+          <td class="score family-start hybrid-cell"><span class="sr">85%</span><span class="score-divider">/</span><span class="prog">0.934</span></td>
+        </tr>
+        <tr>
+          <th scope="row" class="task-cell"><a href="./index.html#task-reverse_stack" title="Watch the reverse_stack demonstration">reverse_stack</a></th>
+          <td class="score family-start"><strong class="sr">96%</strong><span class="score-divider">/</span><strong class="prog">0.960</strong></td>
+          <td class="score"><span class="sr">12%</span><span class="score-divider">/</span><span class="prog">0.358</span></td>
+          <td class="score family-start"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.002</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.004</span></td>
+          <td class="score"><span class="sr">36%</span><span class="score-divider">/</span><span class="prog">0.775</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.034</span></td>
+          <td class="score family-start hybrid-cell"><span class="sr">53%</span><span class="score-divider">/</span><span class="prog">0.674</span></td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th scope="rowgroup" rowspan="2" class="suite-cell">Active exploration</th>
+          <th scope="row" class="task-cell"><a href="./index.html#task-stack_cube_active_exploration" title="Watch the stack_active demonstration">stack_active</a></th>
+          <td class="score family-start"><strong class="sr">49%</strong><span class="score-divider">/</span><strong class="prog">0.615</strong></td>
+          <td class="score"><span class="unreported" aria-label="Not reported">—</span></td>
+          <td class="score family-start"><span class="sr">1%</span><span class="score-divider">/</span><span class="prog">0.463</span></td>
+          <td class="score"><span class="sr">16%</span><span class="score-divider">/</span><span class="prog">0.460</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.063</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.050</span></td>
+          <td class="score family-start hybrid-cell"><span class="unreported" aria-label="Not reported">—</span></td>
+        </tr>
+        <tr>
+          <th scope="row" class="task-cell"><a href="./index.html#task-pick_cube_active_exploration" title="Watch the pick_active demonstration">pick_active</a></th>
+          <td class="score family-start"><strong class="sr">80%</strong><span class="score-divider">/</span><strong class="prog">0.897</strong></td>
+          <td class="score"><span class="unreported" aria-label="Not reported">—</span></td>
+          <td class="score family-start"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.067</span></td>
+          <td class="score"><span class="sr">2%</span><span class="score-divider">/</span><span class="prog">0.170</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.087</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.023</span></td>
+          <td class="score family-start hybrid-cell"><span class="unreported" aria-label="Not reported">—</span></td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th scope="rowgroup" rowspan="2" class="suite-cell">Tool use</th>
+          <th scope="row" class="task-cell"><a href="./index.html#task-fruit_placement" title="Watch the fruit_placement demonstration">fruit_placement</a></th>
+          <td class="score family-start"><strong class="sr">100%</strong><span class="score-divider">/</span><strong class="prog">1.000</strong></td>
+          <td class="score"><span class="sr">29%</span><span class="score-divider">/</span><span class="prog">0.734</span></td>
+          <td class="score family-start"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.010</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.020</span></td>
+          <td class="score"><span class="sr">17%</span><span class="score-divider">/</span><span class="prog">0.736</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.118</span></td>
+          <td class="score family-start hybrid-cell"><span class="sr">66%</span><span class="score-divider">/</span><span class="prog">0.866</span></td>
+        </tr>
+        <tr>
+          <th scope="row" class="task-cell"><a href="./index.html#task-repackage" title="Watch the repackage demonstration">repackage</a></th>
+          <td class="score family-start"><span class="sr">78%</span><span class="score-divider">/</span><span class="prog">0.860</span></td>
+          <td class="score"><span class="sr">67%</span><span class="score-divider">/</span><span class="prog">0.853</span></td>
+          <td class="score family-start"><span class="sr">21%</span><span class="score-divider">/</span><span class="prog">0.493</span></td>
+          <td class="score"><span class="sr">15%</span><span class="score-divider">/</span><span class="prog">0.520</span></td>
+          <td class="score"><span class="sr">6%</span><span class="score-divider">/</span><span class="prog">0.520</span></td>
+          <td class="score"><span class="sr">41%</span><span class="score-divider">/</span><span class="prog">0.793</span></td>
+          <td class="score family-start hybrid-cell"><strong class="sr">86%</strong><span class="score-divider">/</span><strong class="prog">0.920</strong></td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <th scope="rowgroup" rowspan="2" class="suite-cell">Cluttered</th>
+          <th scope="row" class="task-cell"><a href="./index.html#task-stack_cube_clutter" title="Watch the stack_clutter demonstration">stack_clutter</a></th>
+          <td class="score family-start"><span class="sr">35%</span><span class="score-divider">/</span><span class="prog">0.350</span></td>
+          <td class="score"><span class="sr">38%</span><span class="score-divider">/</span><span class="prog">0.430</span></td>
+          <td class="score family-start"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.00</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.000</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.00</span></td>
+          <td class="score"><span class="sr">2%</span><span class="score-divider">/</span><span class="prog">0.035</span></td>
+          <td class="score family-start hybrid-cell"><strong class="sr">69%</strong><span class="score-divider">/</span><strong class="prog">0.735</strong></td>
+        </tr>
+        <tr>
+          <th scope="row" class="task-cell"><a href="./index.html#task-cluttered_packing" title="Watch the clutter_packing demonstration">clutter_packing</a></th>
+          <td class="score family-start"><span class="sr">49%</span><span class="score-divider">/</span><span class="prog">0.503</span></td>
+          <td class="score"><span class="sr">45%</span><span class="score-divider">/</span><span class="prog">0.643</span></td>
+          <td class="score family-start"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.000</span></td>
+          <td class="score"><span class="sr">8%</span><span class="score-divider">/</span><span class="prog">0.100</span></td>
+          <td class="score"><span class="sr">0%</span><span class="score-divider">/</span><span class="prog">0.000</span></td>
+          <td class="score"><span class="sr">15%</span><span class="score-divider">/</span><span class="prog">0.217</span></td>
+          <td class="score family-start hybrid-cell"><strong class="sr">67%</strong><span class="score-divider">/</span><strong class="prog">0.757</strong></td>
+        </tr>
+      </tbody>
+        </table>
+      </div>
+      <div class="table-notes" id="table-notes">
+        <p>Each cell reports <strong>SR / Prog</strong>. Higher is better for both metrics.<br><strong>Bold</strong> marks the best value for each metric within a task. <span class="dash-key">—</span> indicates a result not reported.</p>
+        <p class="task-link-note">Select a task to watch its demonstration <span aria-hidden="true">↗</span></p>
+      </div>
+      <p class="mobile-scroll-note">Swipe across the table to see all methods.</p>
+    </section></div></details>
+    <div class="results-bottom-link"><a href="./index.html#video-appendix">Explore all 20 benchmark tasks <span aria-hidden="true">↗</span></a></div>
+  </main>
+
+  <footer class="results-footer">
+    <div class="results-container"><p>LOHR-BENCH</p><p>Long-Horizon Reasoning Benchmark</p><a href="./index.html">Back to overview <span aria-hidden="true">↗</span></a></div>
+  </footer>
+</body>
+</html>

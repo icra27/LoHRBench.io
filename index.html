@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="LOHR-BENCH: a dual-level, method-agnostic benchmark of 20 long-horizon robot manipulation tasks across four suites.">
+  <meta name="keywords" content="LOHR-BENCH, robot manipulation, long-horizon reasoning, TAMP, robot learning, benchmark">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#147d82">
+  <title>LOHR-BENCH: A Dual-Level Benchmark for Extended Long-Horizon Robot Manipulation</title>
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="publication-header" id="top">
+  <div class="container">
+    <p class="eyebrow">Long-Horizon Reasoning Benchmark</p>
+    <h1><span class="benchmark-name">LOHR-BENCH</span><span class="publication-title">A Dual-Level Benchmark for Extended<br class="desktop-break"> Long-Horizon Robot Manipulation</span></h1>
+    <p class="publication-authors">Anonymous Authors</p>
+    <nav class="publication-links" aria-label="Publication resources">
+      <!-- Replace these disabled buttons with links when the paper and dataset URLs are available. -->
+      <button class="resource-button" type="button" disabled aria-describedby="resource-status"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span>Paper</span><span class="coming-soon">Soon</span></button>
+      <button class="resource-button" type="button" disabled aria-describedby="resource-status"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/></svg><span>Dataset</span><span class="coming-soon">Soon</span></button>
+      <a class="resource-button" href="./leaderboard.html"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10h5v10M9 20V4h6v16M15 20v-7h5v7M2 20h20"/></svg><span>Leaderboard</span></a>
+      <a class="resource-button" href="./static/pdf/LoHR_Supplementary.pdf" target="_blank" rel="noopener" aria-label="Appendix PDF (opens in a new tab)"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span>Appendix</span></a>
+      <a class="resource-button" href="#video-appendix"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="m10 8 6 4-6 4Z"/></svg><span>Video Appendix</span></a>
+    </nav>
+    <p class="resource-status" id="resource-status">Paper and dataset coming soon.</p>
+  </div>
+</header>
+<main id="main">
+  <section class="overview container" aria-label="Four benchmark suites">
+    <div class="overview-grid"><figure class="suite-preview">
+        <video class="overview-video" controls muted loop playsinline preload="metadata" aria-label="Place fruit with a container demonstration" poster="./static/images/task-previews/fruit_placement.jpg">
+          <source src="./static/videos/fruit_placement.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="suite-number">01</span>Tool-use</figcaption>
+      </figure><figure class="suite-preview">
+        <video class="overview-video" controls muted loop playsinline preload="metadata" aria-label="Find and stack cubes demonstration" poster="./static/images/task-previews/stack_active.jpg">
+          <source src="./static/videos/stack_active.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="suite-number">02</span>Active exploration</figcaption>
+      </figure><figure class="suite-preview">
+        <video class="overview-video" controls muted loop playsinline preload="metadata" aria-label="Stack cubes in clutter demonstration" poster="./static/images/task-previews/stack_clutter.jpg">
+          <source src="./static/videos/stack_clutter.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="suite-number">03</span>Clutter</figcaption>
+      </figure><figure class="suite-preview">
+        <video class="overview-video" controls muted loop playsinline preload="metadata" aria-label="Stack 10 cubes demonstration" poster="./static/images/task-previews/stack_10_cube.jpg">
+          <source src="./static/videos/stack_10_cube.mp4" type="video/mp4">
+        </video>
+        <figcaption><span class="suite-number">04</span>Extended long-horizon</figcaption>
+      </figure></div>
+    <div class="overview-caption"><p><strong>20 tasks. Four suites. One shared evaluation protocol.</strong><br>Connecting high-level task reasoning with low-level motion execution.</p><button class="preview-toggle" type="button" hidden>Pause previews</button></div>
+  </section>
+
+  <section class="section abstract-section" id="abstract" aria-labelledby="abstract-heading">
+    <div class="container">
+      <div class="section-heading"><p class="eyebrow">The benchmark</p><h2 id="abstract-heading">Abstract</h2></div>
+      <p class="abstract-text">Long-horizon manipulation is challenging: as horizons grow, errors compound and small deviations cascade. Modular planning systems and end-to-end policies approach this problem differently, yet are rarely evaluated under the same tasks and protocol. We introduce LOHR-BENCH (Long-Horizon Reasoning Benchmark), a dual-level, method-agnostic arena of 20 tasks across four suites: tool-use, active exploration, clutter, and extended–long–horizon. It supports both modular TAMP methods and end-to-end policies within the same environment. Tasks are specified in Planning Domain Definition Language (PDDL) and grounded in simulators, enabling strategy-independent evaluation through goal predicates. The benchmark provides (i) a data pipeline with synchronized rollouts that align language, symbolic plans, and low-level trajectories. (ii) a concise Gym-style interface supports high-level, low-level and dual-level policies, and (iii) unified metrics for progress, success, decision time, and execution time. Together, these components offer a focused, reproducible testbed for comparing modular and end-to-end approaches and for developing hybrid methods that combine structured planning with learned policies.</p>
+      <figure class="benchmark-overview"><img src="./static/images/teaser.png" width="2304" height="1176" loading="lazy" alt="LOHR-BENCH overview: PDDL task design across four suites, synchronized language and trajectory datasets, high-level and low-level policy interfaces, and unified evaluation metrics."><figcaption>A shared environment for modular planning, end-to-end policies, and hybrid methods.</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="section task-section" id="video-appendix" aria-labelledby="tasks-heading">
+    <div class="container">
+      <div class="section-heading"><p class="eyebrow">Video appendix</p><h2 id="tasks-heading">Explore the tasks</h2><p>20 manipulation tasks, organized by the challenge they introduce.</p></div>
+      <div class="task-toolbar" hidden>
+        <div class="suite-filters" role="group" aria-label="Filter tasks by suite"><button class="suite-filter is-active" type="button" data-filter="all" aria-pressed="true" aria-controls="task-suites">All tasks <span>20</span></button>
+<button class="suite-filter" type="button" data-filter="tool-use" aria-pressed="false" aria-controls="task-suites">Tool-use <span>5</span></button>
+<button class="suite-filter" type="button" data-filter="active-exploration" aria-pressed="false" aria-controls="task-suites">Active exploration <span>4</span></button>
+<button class="suite-filter" type="button" data-filter="clutter" aria-pressed="false" aria-controls="task-suites">Clutter <span>5</span></button>
+<button class="suite-filter" type="button" data-filter="extended-long-horizon" aria-pressed="false" aria-controls="task-suites">Extended long-horizon <span>6</span></button>
+</div>
+        <p class="filter-status" role="status" aria-live="polite">Showing all 20 tasks across 4 suites</p>
+      </div>
+      <div id="task-suites"><section class="task-suite" data-suite="tool-use" aria-labelledby="suite-tool-use">
+        <div class="suite-heading">
+          <div class="suite-number">01</div>
+          <div><h3 id="suite-tool-use">Tool-use <span class="task-count">5 tasks</span></h3><p>Use tools and containers to move, transfer, and store objects.</p></div>
+        </div>
+        <div class="task-grid"><article class="task-card" id="task-fruit_placement">
+            <video controls muted loop playsinline preload="none" aria-label="Place fruit with a container demonstration" poster="./static/images/task-previews/fruit_placement.jpg">
+              <source src="./static/videos/fruit_placement.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/fruit_placement.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Place fruit with a container</h4>
+              <code class="task-id">fruit_placement</code>
+              <p>Place four strawberries into the target position using a container.</p>
+            </div>
+          </article><article class="task-card" id="task-repackage">
+            <video controls muted loop playsinline preload="none" aria-label="Repackage cubes demonstration" poster="./static/images/task-previews/repackage.jpg">
+              <source src="./static/videos/repackage.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/repackage.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Repackage cubes</h4>
+              <code class="task-id">repackage</code>
+              <p>Put all cubes into the bowl and stack the bowl on the plate.</p>
+            </div>
+          </article><article class="task-card" id="task-container_transfer">
+            <video controls muted loop playsinline preload="none" aria-label="Transfer between containers demonstration" poster="./static/images/task-previews/container_transfer.jpg">
+              <source src="./static/videos/container_transfer.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/container_transfer.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Transfer between containers</h4>
+              <code class="task-id">container_transfer</code>
+              <p>Pour items from one container into another, then place the filled container on a plate.</p>
+            </div>
+          </article><article class="task-card" id="task-food_storage_simple">
+            <video controls muted loop playsinline preload="none" aria-label="Store food in a locker demonstration" poster="./static/images/task-previews/food_storage_simple.jpg">
+              <source src="./static/videos/food_storage_simple.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/food_storage_simple.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Store food in a locker</h4>
+              <code class="task-id">food_storage_simple</code>
+              <p>Place a strawberry into a bowl, then store the bowl inside a locker.</p>
+            </div>
+          </article><article class="task-card" id="task-push_T_fruit">
+            <video controls muted loop playsinline preload="none" aria-label="Push fruit with a T-tool demonstration" poster="./static/images/task-previews/push_T_fruit.jpg">
+              <source src="./static/videos/push_T_fruit.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/push_T_fruit.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Push fruit with a T-tool</h4>
+              <code class="task-id">push_T_fruit</code>
+              <p>Use a T-shaped tool to push multiple strawberries to a target location.</p>
+            </div>
+          </article></div>
+      </section><section class="task-suite" data-suite="active-exploration" aria-labelledby="suite-active-exploration">
+        <div class="suite-heading">
+          <div class="suite-number">02</div>
+          <div><h3 id="suite-active-exploration">Active exploration <span class="task-count">4 tasks</span></h3><p>Open cabinets and drawers to find and retrieve hidden objects.</p></div>
+        </div>
+        <div class="task-grid"><article class="task-card" id="task-stack_cube_active_exploration">
+            <video controls muted loop playsinline preload="none" aria-label="Find and stack cubes demonstration" poster="./static/images/task-previews/stack_active.jpg">
+              <source src="./static/videos/stack_active.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/stack_active.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Find and stack cubes</h4>
+              <code class="task-id">stack_cube_active_exploration</code>
+              <p>Pick up cubes from a closed cabinet and stack them together, starting with the red cube.</p>
+            </div>
+          </article><article class="task-card" id="task-pick_cube_active_exploration">
+            <video controls muted loop playsinline preload="none" aria-label="Retrieve objects from drawers demonstration" poster="./static/images/task-previews/pick_activate_exploration.jpg">
+              <source src="./static/videos/pick_activate_exploration.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/pick_activate_exploration.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Retrieve objects from drawers</h4>
+              <code class="task-id">pick_cube_active_exploration</code>
+              <p>Pick up the can, screwdriver, and cup from a two-layer drawer and place them at the target location.</p>
+            </div>
+          </article><article class="task-card" id="task-drawer_search_hard">
+            <video controls muted loop playsinline preload="none" aria-label="Search cluttered drawers demonstration" poster="./static/images/task-previews/drawer_search_hard.jpg">
+              <source src="./static/videos/drawer_search_hard.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/drawer_search_hard.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Search cluttered drawers</h4>
+              <code class="task-id">drawer_search_hard</code>
+              <p>Pick up the can, screwdriver, and cup from a cluttered two-layer drawer and place them at the target location.</p>
+            </div>
+          </article><article class="task-card" id="task-stack_cube_cabinet">
+            <video controls muted loop playsinline preload="none" aria-label="Stack cubes from a cabinet demonstration" poster="./static/images/task-previews/stack_cube_cabinet.jpg">
+              <source src="./static/videos/stack_cube_cabinet.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/stack_cube_cabinet.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Stack cubes from a cabinet</h4>
+              <code class="task-id">stack_cube_cabinet</code>
+              <p>Pick out several cubes from a closed double-layer cabinet and stack them.</p>
+            </div>
+          </article></div>
+      </section><section class="task-suite" data-suite="clutter" aria-labelledby="suite-clutter">
+        <div class="suite-heading">
+          <div class="suite-number">03</div>
+          <div><h3 id="suite-clutter">Clutter <span class="task-count">5 tasks</span></h3><p>Manipulate objects among obstacles and tightly packed surroundings.</p></div>
+        </div>
+        <div class="task-grid"><article class="task-card" id="task-stack_cube_clutter">
+            <video controls muted loop playsinline preload="none" aria-label="Stack cubes in clutter demonstration" poster="./static/images/task-previews/stack_clutter.jpg">
+              <source src="./static/videos/stack_clutter.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/stack_clutter.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Stack cubes in clutter</h4>
+              <code class="task-id">stack_cube_clutter</code>
+              <p>Stack three cubes together in a compact environment with surrounding obstacles.</p>
+            </div>
+          </article><article class="task-card" id="task-cluttered_packing">
+            <video controls muted loop playsinline preload="none" aria-label="Pack cubes from clutter demonstration" poster="./static/images/task-previews/clutter_packing.jpg">
+              <source src="./static/videos/clutter_packing.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/clutter_packing.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Pack cubes from clutter</h4>
+              <code class="task-id">cluttered_packing</code>
+              <p>Pick three cubes from a cluttered tabletop and place them into a bowl.</p>
+            </div>
+          </article><article class="task-card" id="task-tall_clutter">
+            <video controls muted loop playsinline preload="none" aria-label="Retrieve from tall clutter demonstration" poster="./static/images/task-previews/tall_clutter.jpg">
+              <source src="./static/videos/tall_clutter.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/tall_clutter.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Retrieve from tall clutter</h4>
+              <code class="task-id">tall_clutter</code>
+              <p>Retrieve a cube surrounded by taller cubes and place it into a bowl.</p>
+            </div>
+          </article><article class="task-card" id="task-clutter_draw">
+            <video controls muted loop playsinline preload="none" aria-label="Extract a stacked cuboid demonstration" poster="./static/images/task-previews/clutter_draw.jpg">
+              <source src="./static/videos/clutter_draw.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/clutter_draw.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Extract a stacked cuboid</h4>
+              <code class="task-id">clutter_draw</code>
+              <p>Extract the red cuboid located beneath the middle column in a three-column stack.</p>
+            </div>
+          </article><article class="task-card" id="task-clutter_push_cube">
+            <video controls muted loop playsinline preload="none" aria-label="Push a cube through clutter demonstration" poster="./static/images/task-previews/push_cube_clutter.jpg">
+              <source src="./static/videos/push_cube_clutter.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/push_cube_clutter.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Push a cube through clutter</h4>
+              <code class="task-id">clutter_push_cube</code>
+              <p>Push a cube to a target location through clutter, moving obstacles that block the path.</p>
+            </div>
+          </article></div>
+      </section><section class="task-suite" data-suite="extended-long-horizon" aria-labelledby="suite-extended-long-horizon">
+        <div class="suite-heading">
+          <div class="suite-number">04</div>
+          <div><h3 id="suite-extended-long-horizon">Extended long-horizon <span class="task-count">6 tasks</span></h3><p>Complete long sequences of stacking, sorting, and rearrangement.</p></div>
+        </div>
+        <div class="task-grid"><article class="task-card" id="task-stack_cube_10">
+            <video controls muted loop playsinline preload="none" aria-label="Stack 10 cubes demonstration" poster="./static/images/task-previews/stack_10_cube.jpg">
+              <source src="./static/videos/stack_10_cube.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/stack_10_cube.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Stack 10 cubes</h4>
+              <code class="task-id">stack_cube_10</code>
+              <p>Stack 10 cubes together, starting with the red cube.</p>
+            </div>
+          </article><article class="task-card" id="task-stack_by_color">
+            <video controls muted loop playsinline preload="none" aria-label="Stack by color demonstration" poster="./static/images/task-previews/stack_by_color.jpg">
+              <source src="./static/videos/stack_by_color.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/stack_by_color.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Stack by color</h4>
+              <code class="task-id">stack_by_color</code>
+              <p>Group cubes by color and stack each color into its own stack.</p>
+            </div>
+          </article><article class="task-card" id="task-sort_and_store">
+            <video controls muted loop playsinline preload="none" aria-label="Sort and store demonstration" poster="./static/images/task-previews/sort_and_store.jpg">
+              <source src="./static/videos/sort_and_store.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/sort_and_store.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Sort and store</h4>
+              <code class="task-id">sort_and_store</code>
+              <p>Sort tabletop objects into two boxes: toys and balls in one box, tools in the other.</p>
+            </div>
+          </article><article class="task-card" id="task-reverse_stack">
+            <video controls muted loop playsinline preload="none" aria-label="Reverse a stack demonstration" poster="./static/images/task-previews/reverse_stack.jpg">
+              <source src="./static/videos/reverse_stack.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/reverse_stack.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Reverse a stack</h4>
+              <code class="task-id">reverse_stack</code>
+              <p>Reverse a stack of 10 cubes.</p>
+            </div>
+          </article><article class="task-card" id="task-stack_cube_pyramid_simple">
+            <video controls muted loop playsinline preload="none" aria-label="Build a cube pyramid demonstration" poster="./static/images/task-previews/stack_cube_pyrimid_simple.jpg">
+              <source src="./static/videos/stack_cube_pyrimid_simple.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/stack_cube_pyrimid_simple.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Build a cube pyramid</h4>
+              <code class="task-id">stack_cube_pyramid_simple</code>
+              <p>Build a 10-cube pyramid with layers 4–3–2–1.</p>
+            </div>
+          </article><article class="task-card" id="task-stack_cube_hanoi">
+            <video controls muted loop playsinline preload="none" aria-label="Cube Tower of Hanoi demonstration" poster="./static/images/task-previews/stack_cube_hanoi.jpg">
+              <source src="./static/videos/stack_cube_hanoi.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="./static/videos/stack_cube_hanoi.mp4">Download this demonstration</a>.
+            </video>
+            <div class="task-card-body">
+              <h4>Cube Tower of Hanoi</h4>
+              <code class="task-id">stack_cube_hanoi</code>
+              <p>Solve a Tower-of-Hanoi-style rearrangement with colored cubes using pick-and-place under Hanoi constraints.</p>
+            </div>
+          </article></div>
+      </section></div>
+    </div>
+  </section>
+
+</main>
+<footer class="footer">
+  <div class="container footer-content"><p><strong>LOHR-BENCH</strong> · Long-Horizon Reasoning Benchmark</p><p>Website adapted from <a href="https://nerfies.github.io/">Nerfies</a>, licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.</p><a href="#top">Back to top ↑</a></div>
+</footer>
+</body>
+</html>

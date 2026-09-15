@@ -1,0 +1,57 @@
+suite,task,method_family,method,success_rate_percent,progress_score
+Extended-Long,stack_cube_10,TAMP,PDDLStream,100,1.000
+Extended-Long,stack_cube_10,TAMP,TiPToP,81,0.929
+Extended-Long,stack_cube_10,E2E (raw obs.),ACT,0,0.192
+Extended-Long,stack_cube_10,E2E (raw obs.),DP,51,0.856
+Extended-Long,stack_cube_10,E2E (raw obs.),OpenVLA-oft,0,0.194
+Extended-Long,stack_cube_10,E2E (raw obs.),π0 (FAST),0,0.190
+Extended-Long,stack_cube_10,Hybrid,Agentic,85,0.934
+Extended-Long,reverse_stack,TAMP,PDDLStream,96,0.960
+Extended-Long,reverse_stack,TAMP,TiPToP,12,0.358
+Extended-Long,reverse_stack,E2E (raw obs.),ACT,0,0.002
+Extended-Long,reverse_stack,E2E (raw obs.),DP,0,0.004
+Extended-Long,reverse_stack,E2E (raw obs.),OpenVLA-oft,36,0.775
+Extended-Long,reverse_stack,E2E (raw obs.),π0 (FAST),0,0.034
+Extended-Long,reverse_stack,Hybrid,Agentic,53,0.674
+Active expl.,stack_active,TAMP,PDDLStream,49,0.615
+Active expl.,stack_active,TAMP,TiPToP,,
+Active expl.,stack_active,E2E (raw obs.),ACT,1,0.463
+Active expl.,stack_active,E2E (raw obs.),DP,16,0.460
+Active expl.,stack_active,E2E (raw obs.),OpenVLA-oft,0,0.063
+Active expl.,stack_active,E2E (raw obs.),π0 (FAST),0,0.050
+Active expl.,stack_active,Hybrid,Agentic,,
+Active expl.,pick_active,TAMP,PDDLStream,80,0.897
+Active expl.,pick_active,TAMP,TiPToP,,
+Active expl.,pick_active,E2E (raw obs.),ACT,0,0.067
+Active expl.,pick_active,E2E (raw obs.),DP,2,0.170
+Active expl.,pick_active,E2E (raw obs.),OpenVLA-oft,0,0.087
+Active expl.,pick_active,E2E (raw obs.),π0 (FAST),0,0.023
+Active expl.,pick_active,Hybrid,Agentic,,
+Tool use,fruit_placement,TAMP,PDDLStream,100,1.000
+Tool use,fruit_placement,TAMP,TiPToP,29,0.734
+Tool use,fruit_placement,E2E (raw obs.),ACT,0,0.010
+Tool use,fruit_placement,E2E (raw obs.),DP,0,0.020
+Tool use,fruit_placement,E2E (raw obs.),OpenVLA-oft,17,0.736
+Tool use,fruit_placement,E2E (raw obs.),π0 (FAST),0,0.118
+Tool use,fruit_placement,Hybrid,Agentic,66,0.866
+Tool use,repackage,TAMP,PDDLStream,78,0.860
+Tool use,repackage,TAMP,TiPToP,67,0.853
+Tool use,repackage,E2E (raw obs.),ACT,21,0.493
+Tool use,repackage,E2E (raw obs.),DP,15,0.520
+Tool use,repackage,E2E (raw obs.),OpenVLA-oft,6,0.520
+Tool use,repackage,E2E (raw obs.),π0 (FAST),41,0.793
+Tool use,repackage,Hybrid,Agentic,86,0.920
+Cluttered,stack_clutter,TAMP,PDDLStream,35,0.350
+Cluttered,stack_clutter,TAMP,TiPToP,38,0.430
+Cluttered,stack_clutter,E2E (raw obs.),ACT,0,0.00
+Cluttered,stack_clutter,E2E (raw obs.),DP,0,0.000
+Cluttered,stack_clutter,E2E (raw obs.),OpenVLA-oft,0,0.00
+Cluttered,stack_clutter,E2E (raw obs.),π0 (FAST),2,0.035
+Cluttered,stack_clutter,Hybrid,Agentic,69,0.735
+Cluttered,clutter_packing,TAMP,PDDLStream,49,0.503
+Cluttered,clutter_packing,TAMP,TiPToP,45,0.643
+Cluttered,clutter_packing,E2E (raw obs.),ACT,0,0.000
+Cluttered,clutter_packing,E2E (raw obs.),DP,8,0.100
+Cluttered,clutter_packing,E2E (raw obs.),OpenVLA-oft,0,0.000
+Cluttered,clutter_packing,E2E (raw obs.),π0 (FAST),15,0.217
+Cluttered,clutter_packing,Hybrid,Agentic,67,0.757
