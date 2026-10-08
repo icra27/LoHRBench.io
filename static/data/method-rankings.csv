@@ -1,0 +1,8 @@
+family,rank,method,type,mean_success_rate_percent,mean_progress_score,ranking_tasks,reported_tasks,ranking_basis
+tamp,1,PDDLStream,planning,73.38,0.773,8,8,All reported tasks per method; equal task weighting; missing results excluded; SR then progress
+tamp,2,TiPToP,planning,45.33,0.658,6,6,All reported tasks per method; equal task weighting; missing results excluded; SR then progress
+e2e,1,DP,other,11.50,0.266,8,8,All reported tasks per method; equal task weighting; missing results excluded; SR then progress
+e2e,2,OpenVLA-oft,vla,7.38,0.297,8,8,All reported tasks per method; equal task weighting; missing results excluded; SR then progress
+e2e,3,π0 (FAST),vla,7.25,0.183,8,8,All reported tasks per method; equal task weighting; missing results excluded; SR then progress
+e2e,4,ACT,other,2.75,0.153,8,8,All reported tasks per method; equal task weighting; missing results excluded; SR then progress
+hybrid,1,Agentic,agent,71.00,0.814,6,6,All reported tasks per method; equal task weighting; missing results excluded; SR then progress
